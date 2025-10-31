@@ -24,7 +24,7 @@ class GoogleSheetsServicePublic {
       }
 
       // Construire l'URL de l'API
-      const range = `${this.sheetName}!A2:F`; // Depuis A2 pour éviter les en-têtes (6 colonnes maintenant)
+      const range = `${this.sheetName}!A2:K`; // Depuis A2 pour éviter les en-têtes (11 colonnes)
       const url = `${API_BASE_URL}/${this.spreadsheetId}/values/${encodeURIComponent(range)}?key=${this.apiKey}`;
 
       console.log('📡 Récupération des données depuis Google Sheets...');
@@ -47,15 +47,16 @@ class GoogleSheetsServicePublic {
       }
 
       // Transformer les données en objets
+      // Colonnes du Sheet: A=Nom, B=Date, C=MontantHT, D=TVA, E=MontantTTC, F=kWh, G=Station, H=Pays, I=Durée, J=Début, K=LienDrive
       const factures = rows
         .filter(row => row[0] && row[0] !== 'TOTAL') // Exclure la ligne TOTAL
         .map(row => ({
-          nomFichier: row[0] || '',
-          dateFacture: row[1] || '',
-          consommation: row[2] || '0',
-          station: row[3] || '',
-          montantTTC: row[4] || '0',
-          lienDrive: row[5] || ''
+          nomFichier: row[0] || '',           // A: Nom Fichier
+          dateFacture: row[1] || '',          // B: Date
+          consommation: row[5] || '0',        // F: kWh
+          station: row[6] || '',              // G: Station
+          montantTTC: row[4] || '0',          // E: Montant TTC (€)
+          lienDrive: row[10] || ''            // K: Lien Drive
         }));
 
       console.log(`✅ ${factures.length} facture(s) récupérée(s)`);
