@@ -1,0 +1,420 @@
+.factures-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.factures-header {
+  margin-bottom: 30px;
+}
+
+.factures-header h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.factures-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: #00b8d4;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 184, 212, 0.3);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #00b8d4;
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.clear-button:hover {
+  color: #333;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.factures-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.factures-table thead {
+  background: #00b8d4;
+  color: white;
+}
+
+.factures-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  cursor: default;
+}
+
+.factures-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.factures-table th.sortable:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sort-indicator {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+.factures-table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s;
+}
+
+.factures-table tbody tr:hover {
+  background-color: #e0f7fa;
+}
+
+.factures-table td {
+  padding: 12px 15px;
+}
+
+.factures-table td.montant {
+  font-weight: 600;
+  color: #00838f;
+}
+
+.factures-table td.consommation {
+  font-weight: 600;
+  color: #00838f;
+}
+
+.factures-table td.station {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.factures-table tfoot .total-row {
+  background-color: #e0f7fa;
+  border-top: 2px solid #00b8d4;
+}
+
+.factures-table tfoot td {
+  padding: 15px;
+  font-size: 1.1em;
+}
+
+.view-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #00b8d4;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.view-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 184, 212, 0.4);
+  background: #00838f;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #00b8d4;
+}
+
+.spinner {
+  border: 4px solid #e0f7fa;
+  border-top: 4px solid #00b8d4;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  background-color: #fee;
+  border: 2px solid #fcc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  color: #c33;
+}
+
+.error h3 {
+  margin-top: 0;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 1.1em;
+}
+
+/* Responsive Design pour Mobile */
+@media (max-width: 768px) {
+  .factures-container {
+    padding: 10px;
+  }
+
+  .factures-header h1 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .factures-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat-box {
+    padding: 15px;
+  }
+
+  .stat-value {
+    font-size: 1.5em;
+  }
+
+  .search-bar {
+    margin-bottom: 15px;
+  }
+
+  .search-input {
+    padding: 10px 35px 10px 12px;
+    font-size: 14px;
+  }
+
+  /* Transformer le tableau en cartes sur mobile */
+  .table-container {
+    overflow-x: visible;
+    box-shadow: none;
+  }
+
+  .factures-table {
+    display: block;
+  }
+
+  .factures-table thead {
+    display: none; /* Masquer les en-têtes sur mobile */
+  }
+
+  .factures-table tbody {
+    display: block;
+  }
+
+  .factures-table tbody tr {
+    display: block;
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-bottom: none;
+  }
+
+  .factures-table tbody tr:hover {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 184, 212, 0.2);
+  }
+
+  .factures-table td {
+    display: block;
+    padding: 8px 0;
+    text-align: left;
+    border: none;
+  }
+
+  /* Ajouter des labels avant chaque donnée */
+  .factures-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #00838f;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .factures-table td:first-child {
+    padding-top: 0;
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #333;
+  }
+
+  .factures-table td:last-child {
+    padding-bottom: 0;
+    margin-top: 10px;
+  }
+
+  .factures-table td.montant {
+    font-size: 1.3em;
+    color: #00b8d4;
+    font-weight: 700;
+    padding: 10px 0;
+  }
+
+  .factures-table td.consommation {
+    font-size: 1.1em;
+    color: #00838f;
+    font-weight: 600;
+  }
+
+  .factures-table td.station {
+    max-width: 100%;
+    white-space: normal;
+    font-size: 0.95em;
+    line-height: 1.4;
+  }
+
+  .view-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  /* Footer du tableau (Total) */
+  .factures-table tfoot {
+    display: block;
+  }
+
+  .factures-table tfoot .total-row {
+    display: flex;
+    flex-wrap: wrap;
+    background: #00b8d4;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .factures-table tfoot td {
+    display: block;
+    padding: 5px 0;
+    border: none;
+  }
+
+  .factures-table tfoot td:nth-child(1) {
+    width: 100%;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+
+  .factures-table tfoot td:nth-child(2) {
+    display: none;
+  }
+
+  .factures-table tfoot td:nth-child(3) {
+    flex: 1;
+    font-size: 1.3em;
+  }
+
+  .factures-table tfoot td:nth-child(3)::before {
+    content: "kWh: ";
+    font-size: 0.7em;
+    display: block;
+    opacity: 0.8;
+  }
+
+  .factures-table tfoot td:nth-child(4) {
+    display: none;
+  }
+
+  .factures-table tfoot td:nth-child(5) {
+    flex: 1;
+    font-size: 1.3em;
+    text-align: right;
+  }
+
+  .factures-table tfoot td:nth-child(5)::before {
+    content: "Total: ";
+    font-size: 0.7em;
+    display: block;
+    opacity: 0.8;
+  }
+
+  .factures-table tfoot td:nth-child(6) {
+    display: none;
+  }
+
+  .no-data {
+    padding: 30px 15px;
+    font-size: 1em;
+  }
+}

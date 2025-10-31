@@ -1,38 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.app-header {
+  background: #00b8d4;
   color: white;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 184, 212, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-content h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: white;
+  color: #00b8d4;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #f0f0f0;
+  color: #00838f;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-large {
+  padding: 15px 30px;
+  font-size: 1.1em;
+}
+
+.app-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.welcome-message {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  background: white;
+  padding: 60px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message h2 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.welcome-message p {
+  color: #666;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.app-footer {
+  background: #00838f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.app-footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive pour Mobile */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header-content h1 {
+    font-size: 1.3em;
+    line-height: 1.3;
+  }
+
+  .header-actions {
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 0.9em;
+  }
+
+  .btn-large {
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  .app-main {
+    padding: 10px;
+  }
+
+  .welcome-message {
+    margin: 30px auto;
+    padding: 30px 20px;
+  }
+
+  .welcome-message h2 {
+    font-size: 1.8em;
+  }
+
+  .welcome-message p {
+    font-size: 1em;
+  }
+
+  .app-footer {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+}
+
+/* Très petits écrans (< 400px) */
+@media (max-width: 400px) {
+  .header-content h1 {
+    font-size: 1.1em;
+  }
+
+  .header-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    font-size: 0.85em;
+    padding: 10px;
   }
 }
