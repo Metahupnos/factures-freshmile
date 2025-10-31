@@ -2,7 +2,7 @@
   "name": "home",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://VOTRE_USERNAME.github.io/factures-freshmile",
+  "homepage": "https://metahupnos.github.io/factures-freshmile",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
