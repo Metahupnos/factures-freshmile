@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/factures-freshmile/static/css/main.954ab42f.css",
+    "main.js": "/factures-freshmile/static/js/main.d50bcc3f.js",
+    "static/js/453.5063f8dc.chunk.js": "/factures-freshmile/static/js/453.5063f8dc.chunk.js",
+    "index.html": "/factures-freshmile/index.html",
+    "main.954ab42f.css.map": "/factures-freshmile/static/css/main.954ab42f.css.map",
+    "main.d50bcc3f.js.map": "/factures-freshmile/static/js/main.d50bcc3f.js.map",
+    "453.5063f8dc.chunk.js.map": "/factures-freshmile/static/js/453.5063f8dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.954ab42f.css",
+    "static/js/main.d50bcc3f.js"
+  ]
+}
